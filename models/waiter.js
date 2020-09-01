@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     tipAmount: DataTypes.DECIMAL
   });
 
-  Waiter.associate = (models) => {
+  Waiter.associate = models => {
     Waiter.belongsTo(models.Restuarant, {
       foreignKey: {
         allowNull: false
