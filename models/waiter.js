@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
   // Creates a "Waiter" model that matches up with DB
   const Waiter = sequelize.define("Waiter", {
     name: DataTypes.STRING,
@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     tipAmount: DataTypes.DECIMAL
   });
 
-  Waiter.associate = function(models) {
+  Waiter.associate = (models) => {
     Waiter.belongsTo(models.Restuarant, {
       foreignKey: {
         allowNull: false
